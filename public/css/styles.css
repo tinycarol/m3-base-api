@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+:root {
+  --primary: #f7cde3;
+  --primary-dark: #b9789a;
+  --primary-light: #fbe1ef;
+  --accent: #9a93c8;
+  --accent-dark: #635d8f;
+  --accent-light: #b5afe2;
+  --secondary: #fae8a0;
+  --secondary-dark: #c2ac56;
+  --secondary-light: #faeebf;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: "Ubuntu Mono", monospace;
+  margin: 0;
+  color: var(--primary-dark);
+}
+
+a {
+  color: var(--accent-dark);
+}
+
+a:visited {
+  color: var(--accent);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--accent);
+}
+
+.navbar .navbar-brand {
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+.navbar ul {
+  display: flex;
+  list-style-type: none;
+}
+
+.navbar ul li {
+  margin-left: 1rem;
+}
+
+.navbar a {
+  color: var(--secondary);
+}
+
+.container {
+  padding: 10px 150px;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+footer {
+  position: sticky;
+  top: 100vh;
+  background-color: var(--secondary);
+  color: var(--accent);
+  margin-top: 2rem;
+  text-align: right;
+}
+
+footer a {
+  color: var(--primary);
+}
+
+footer a:visited {
+  color: var(--primary-dark);
+}
+
+@media (max-width: 700px) {
+  .container {
+    padding: 10px;
+  }
+}

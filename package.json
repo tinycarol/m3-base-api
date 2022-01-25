@@ -1,0 +1,23 @@
+{
+  "name": "m3-base-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon -e hbs,css,js app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.2",
+    "hbs": "^4.2.0",
+    "http-errors": "^2.0.0",
+    "mongoose": "^6.1.8",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
