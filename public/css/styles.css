@@ -60,6 +60,24 @@ a:visited {
   padding: 10px 150px;
 }
 
+.book {
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.book-details {
+    margin-top: -20px;
+    margin-left: 2rem;
+}
+
+.book-cover-small {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
 *,
 *::after,
 *::before {
