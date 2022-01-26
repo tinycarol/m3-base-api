@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "dev": "nodemon -e hbs,css,js app.js"
+    "dev": "nodemon -e hbs,css,js app.js",
+    "seeds": "node bin/seeds.js"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +14,7 @@
   "dependencies": {
     "dotenv": "^14.3.2",
     "express": "^4.17.2",
+    "faker": "^5.5.3",
     "hbs": "^4.2.0",
     "http-errors": "^2.0.0",
     "mongoose": "^6.1.8",

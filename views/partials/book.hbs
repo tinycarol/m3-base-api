@@ -1,0 +1,16 @@
+<div class="book">
+  {{#unless detail}}
+    <img class="book-cover-small" src="{{cover}}" alt="{{title}} cover" />
+  {{/unless}}
+
+  <div class="book-details">
+    <h2>{{title}} - by {{author}}</h2>
+    <p>Published in {{year}}</p>
+    {{#if detail}}
+      <p>{{description}}</p>
+      <img class="book-cover-large" src="{{cover}}" alt="{{title}} cover" />
+    {{else}}
+      <a href="/books/{{id}}">Read more</a>
+    {{/if}}
+  </div>
+</div>
