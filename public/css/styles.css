@@ -61,21 +61,21 @@ a:visited {
 }
 
 .book {
-    display: flex;
-    align-items: center;
-    margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
 }
 
 .book-details {
-    margin-top: -20px;
-    margin-left: 2rem;
+  margin-top: -20px;
 }
 
 .book-cover-small {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 2rem;
 }
 
 *,
@@ -99,6 +99,36 @@ footer a {
 
 footer a:visited {
   color: var(--primary-dark);
+}
+
+form button {
+  margin: 5px 0;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-family: "Ubuntu Mono", monospace;
+  border: 1px solid var(--secondary-light);
+  background-color: var(--secondary-light);
+  color: var(--accent-dark);
+  font-size: 1rem;
+}
+
+form input, form textarea {
+  margin: 5px 0;
+  padding: 10px;
+  font-family: "Ubuntu Mono", monospace;
+  color: var(--accent-dark);
+  font-size: 1rem;
+  border: 1px solid var(--accent);
+  border-radius: 5px;
+  min-width: 50%;
+}
+
+form input:focus, form textarea:focus {
+  outline: 2px solid var(--accent);
+}
+
+form > div {
+  margin-top: 15px;
 }
 
 @media (max-width: 700px) {
