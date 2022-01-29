@@ -16,6 +16,20 @@
       <form method="POST" action="/books/{{_id}}/delete">
         <button type="submit">Delete book</button>
       </form> --}}
+      
+      {{#if featuring}}
+      <h3>Book featuring</h3>
+      {{#each featuring as |featuring|}}
+        <a href="/characters/{{featuring.character._id}}">{{featuring.character.name}}</a>
+      {{/each}}
+      {{/if}}
+
+      {{#if reviews}}
+      <h3>Book reviews</h3>
+      {{#each reviews as |review|}}
+        {{> review review=review}}
+      {{/each}}
+      {{/if}}
     {{else}}
       <a href="/books/{{id}}">Read more</a>
     {{/if}}

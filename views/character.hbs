@@ -1,0 +1,13 @@
+<h1>{{name}}</h1>
+{{#if featuring}}
+  <h3>Featuring in:</h3>
+  <ul>
+    {{#each featuring as |featuring|}}
+      <li>
+        <a href="/books/{{featuring.book._id}}">
+          {{featuring.book.title}}
+        </a>
+      </li>
+    {{/each}}
+  </ul>
+{{/if}}
