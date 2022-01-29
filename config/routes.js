@@ -21,7 +21,23 @@ router.get("/books", (req, res, next) => {
     ],
   })
     .then((books) => {
-      res.render("books", { books, query: query });
+      res.render("books/books", { books, query: query });
+    })
+    .catch((e) => next(e));
+});
+
+router.get("/books/create", (req, res, next) => {
+  res.render("books/form");
+});
+
+router.post("/books/create", (req, res, next) => {
+  console.log(req.body);
+  if (!req.body.cover) {
+    req.body.cover = undefined;
+  }
+  Book.create(req.body)
+    .then((book) => {
+      res.redirect(`/books/${book._id}`);
     })
     .catch((e) => next(e));
 });
@@ -29,7 +45,39 @@ router.get("/books", (req, res, next) => {
 router.get("/books/:id", (req, res, next) => {
   Book.findById(req.params.id)
     .then((book) => {
-      res.render("book", { ...book.toJSON(), detail: true });
+      res.render("books/book", { ...book.toJSON(), detail: true });
+    })
+    .catch((e) => next(e));
+});
+
+router.get("/books/:id/update", (req, res, next) => {
+  Book.findById(req.params.id)
+    .then((book) => {
+      res.render("books/form", book);
+    })
+    .catch((e) => next(e));
+});
+
+router.post("/books/:id/update", (req, res, next) => {
+  Book.findByIdAndUpdate(req.params.id, req.body)
+    .then((book) => {
+      res.redirect(`/books/${book._id}`);
+    })
+    .catch((e) => next(e));
+});
+
+router.post("/books/:id/delete", (req, res, next) => {
+  Book.findByIdAndDelete(req.params.id)
+    .then(() => {
+      res.redirect("/books");
+    })
+    .catch((e) => next(e));
+});
+
+router.get("/books/:id/delete", (req, res, next) => {
+  Book.findByIdAndDelete(req.params.id)
+    .then(() => {
+      res.redirect("/books");
     })
     .catch((e) => next(e));
 });

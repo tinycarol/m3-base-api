@@ -1,0 +1,29 @@
+<h1>{{#if _id}}Edit{{else}}Create new{{/if}} book</h1>
+<form action="/books/{{#if _id}}{{_id}}/update{{else}}create{{/if}}" method="POST">
+  <div>
+    <label for="title">Title</label>
+    <br />
+    <input name="title" value="{{title}}" />
+  </div>
+  <div>
+    <label for="author">Author</label>
+    <br />
+    <input name="author" value="{{author}}" />
+  </div>
+  <div>
+    <label for="cover">Cover</label>
+    <br />
+    <input name="cover" value="{{cover}}" />
+  </div>
+  <div>
+    <label for="year">Year</label>
+    <br />
+    <input name="year" type="number" value="{{year}}" />
+  </div>
+  <div>
+    <label for="description">Description</label>
+    <br />
+    <textarea name="description">{{description}}</textarea>
+  </div>
+  <button type="submit">{{#if _id}}Edit{{else}}Create{{/if}} it</button>
+</form>

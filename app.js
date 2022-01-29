@@ -10,6 +10,7 @@ const app = express();
 
 app.use(logger("dev"));
 app.use(express.static("public"));
+app.use(express.urlencoded({ extended: true }));
 
 // creates an absolute path pointing to a folder called "views"
 app.set("views", __dirname + "/views");

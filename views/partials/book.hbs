@@ -9,6 +9,13 @@
     {{#if detail}}
       <p>{{description}}</p>
       <img class="book-cover-large" src="{{cover}}" alt="{{title}} cover" />
+      <br />
+      <a href="/books/{{_id}}/update">Update</a>
+      <a href="/books/{{_id}}/delete">Delete</a>
+      {{!-- 
+      <form method="POST" action="/books/{{_id}}/delete">
+        <button type="submit">Delete book</button>
+      </form> --}}
     {{else}}
       <a href="/books/{{id}}">Read more</a>
     {{/if}}
